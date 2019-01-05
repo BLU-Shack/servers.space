@@ -38,7 +38,7 @@ class Client {
 	}
 
 	/**
-	 * The API URL of serverlist.space. Version is missing; Polyfilled on get.
+	 * The API URL of serverlist.space. Version is missing.
 	 * @type {string}
 	 */
 	get endpoint() {
