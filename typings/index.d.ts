@@ -86,6 +86,16 @@ declare module 'servers.space' {
 		public readonly guildUserTotal: number;
 	}
 
+	export class Upvote extends Base {
+		constructor(obj: object, id: string);
+
+		public guildID: string;
+		public timestamp: number;
+		public user: User;
+
+		public toString(): string;
+	}
+
 	export class User extends Base {
 		constructor(obj: object);
 		
