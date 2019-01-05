@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Base - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Base.html">Base</a><ul class='members'><li data-type='method'><a href="Base.html#raw">raw</a></li></ul></li><li><a href="Client.html">Client</a><ul class='methods'><li data-type='method'><a href="Client.html#edit">edit</a></li><li data-type='method'><a href="Client.html#fetchGuild">fetchGuild</a></li><li data-type='method'><a href="Client.html#fetchGuilds">fetchGuilds</a></li><li data-type='method'><a href="Client.html#fetchGuildsOfUser">fetchGuildsOfUser</a></li><li data-type='method'><a href="Client.html#fetchStats">fetchStats</a></li><li data-type='method'><a href="Client.html#fetchUpvotes">fetchUpvotes</a></li><li data-type='method'><a href="Client.html#fetchUser">fetchUser</a></li></ul><ul class='members'><li data-type='method'><a href="Client.html#endpoint">endpoint</a></li><li data-type='method'><a href="Client.html#guilds">guilds</a></li><li data-type='method'><a href="Client.html#options">options</a></li><li data-type='method'><a href="Client.html#users">users</a></li></ul></li><li><a href="FetchError.html">FetchError</a><ul class='methods'><li data-type='method'><a href="FetchError.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="FetchError.html#name">name</a></li></ul></li><li><a href="Guild.html">Guild</a><ul class='methods'><li data-type='method'><a href="Guild.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="Guild.html#childFriendlyIcon">childFriendlyIcon</a></li><li data-type='method'><a href="Guild.html#compliance">compliance</a></li><li data-type='method'><a href="Guild.html#createdTimestamp">createdTimestamp</a></li><li data-type='method'><a href="Guild.html#emojis">emojis</a></li><li data-type='method'><a href="Guild.html#fullDescription">fullDescription</a></li><li data-type='method'><a href="Guild.html#icon">icon</a></li><li data-type='method'><a href="Guild.html#id">id</a></li><li data-type='method'><a href="Guild.html#lastUpdateTimestamp">lastUpdateTimestamp</a></li><li data-type='method'><a href="Guild.html#memberCount">memberCount</a></li><li data-type='method'><a href="Guild.html#name">name</a></li><li data-type='method'><a href="Guild.html#owner">owner</a></li><li data-type='method'><a href="Guild.html#owners">owners</a></li><li data-type='method'><a href="Guild.html#ownersMap">ownersMap</a></li><li data-type='method'><a href="Guild.html#pageURL">pageURL</a></li><li data-type='method'><a href="Guild.html#public">public</a></li><li data-type='method'><a href="Guild.html#raw">raw</a></li><li data-type='method'><a href="Guild.html#secondaryOwners">secondaryOwners</a></li><li data-type='method'><a href="Guild.html#shortDescription">shortDescription</a></li><li data-type='method'><a href="Guild.html#tags">tags</a></li><li data-type='method'><a href="Guild.html#vanityCode">vanityCode</a></li><li data-type='method'><a href="Guild.html#vanityURL">vanityURL</a></li></ul></li><li><a href="Ratelimit.html">Ratelimit</a><ul class='methods'><li data-type='method'><a href="Ratelimit.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="Ratelimit.html#headers">headers</a></li><li data-type='method'><a href="Ratelimit.html#limit">limit</a></li><li data-type='method'><a href="Ratelimit.html#message">message</a></li><li data-type='method'><a href="Ratelimit.html#name">name</a></li><li data-type='method'><a href="Ratelimit.html#retryAfter">retryAfter</a></li></ul></li><li><a href="Stats.html">Stats</a><ul class='members'><li data-type='method'><a href="Stats.html#guilds">guilds</a></li><li data-type='method'><a href="Stats.html#guildUserTotal">guildUserTotal</a></li><li data-type='method'><a href="Stats.html#raw">raw</a></li><li data-type='method'><a href="Stats.html#tags">tags</a></li><li data-type='method'><a href="Stats.html#users">users</a></li></ul></li><li><a href="Upvote.html">Upvote</a><ul class='methods'><li data-type='method'><a href="Upvote.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="Upvote.html#guildID">guildID</a></li><li data-type='method'><a href="Upvote.html#raw">raw</a></li><li data-type='method'><a href="Upvote.html#timestamp">timestamp</a></li><li data-type='method'><a href="Upvote.html#user">user</a></li></ul></li><li><a href="User.html">User</a><ul class='methods'><li data-type='method'><a href="User.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="User.html#avatar">avatar</a></li><li data-type='method'><a href="User.html#description">description</a></li><li data-type='method'><a href="User.html#discriminator">discriminator</a></li><li data-type='method'><a href="User.html#id">id</a></li><li data-type='method'><a href="User.html#pageURL">pageURL</a></li><li data-type='method'><a href="User.html#raw">raw</a></li><li data-type='method'><a href="User.html#tag">tag</a></li><li data-type='method'><a href="User.html#username">username</a></li></ul></li></ul><h3>Externals</h3><ul><li><a href="external-Headers.html">Headers</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Base</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        Base
+        </h2>
+        
+            <div class="class-description">The universal base of all classes.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="Base"><span class="type-signature"></span>new Base<span class="signature">(obj)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>obj</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="structures_Base.js.html">structures/Base.js</a>, <a href="structures_Base.js.html#line4">line 4</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            <div class="subsection-item">
+                
+<h4 class="name" id="raw"><span class="type-signature">(readonly) </span>raw<span class="type-signature"> :object</span></h4>
+
+
+
+
+<div class="description">
+    The raw object of the class, giving the class properties value.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul class="ul-type">
+        <li>
+            
+<span class="param-type">object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="structures_Base.js.html">structures/Base.js</a>, <a href="structures_Base.js.html#line9">line 9</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            </div>
+        
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jan 04 2019 20:16:03 GMT-0800 (Pacific Standard Time) using the Toast theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

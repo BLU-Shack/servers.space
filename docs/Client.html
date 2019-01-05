@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Client - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Base.html">Base</a><ul class='members'><li data-type='method'><a href="Base.html#raw">raw</a></li></ul></li><li><a href="Client.html">Client</a><ul class='methods'><li data-type='method'><a href="Client.html#edit">edit</a></li><li data-type='method'><a href="Client.html#fetchGuild">fetchGuild</a></li><li data-type='method'><a href="Client.html#fetchGuilds">fetchGuilds</a></li><li data-type='method'><a href="Client.html#fetchGuildsOfUser">fetchGuildsOfUser</a></li><li data-type='method'><a href="Client.html#fetchStats">fetchStats</a></li><li data-type='method'><a href="Client.html#fetchUpvotes">fetchUpvotes</a></li><li data-type='method'><a href="Client.html#fetchUser">fetchUser</a></li></ul><ul class='members'><li data-type='method'><a href="Client.html#endpoint">endpoint</a></li><li data-type='method'><a href="Client.html#guilds">guilds</a></li><li data-type='method'><a href="Client.html#options">options</a></li><li data-type='method'><a href="Client.html#users">users</a></li></ul></li><li><a href="FetchError.html">FetchError</a><ul class='methods'><li data-type='method'><a href="FetchError.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="FetchError.html#name">name</a></li></ul></li><li><a href="Guild.html">Guild</a><ul class='methods'><li data-type='method'><a href="Guild.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="Guild.html#childFriendlyIcon">childFriendlyIcon</a></li><li data-type='method'><a href="Guild.html#compliance">compliance</a></li><li data-type='method'><a href="Guild.html#createdTimestamp">createdTimestamp</a></li><li data-type='method'><a href="Guild.html#emojis">emojis</a></li><li data-type='method'><a href="Guild.html#fullDescription">fullDescription</a></li><li data-type='method'><a href="Guild.html#icon">icon</a></li><li data-type='method'><a href="Guild.html#id">id</a></li><li data-type='method'><a href="Guild.html#lastUpdateTimestamp">lastUpdateTimestamp</a></li><li data-type='method'><a href="Guild.html#memberCount">memberCount</a></li><li data-type='method'><a href="Guild.html#name">name</a></li><li data-type='method'><a href="Guild.html#owner">owner</a></li><li data-type='method'><a href="Guild.html#owners">owners</a></li><li data-type='method'><a href="Guild.html#ownersMap">ownersMap</a></li><li data-type='method'><a href="Guild.html#pageURL">pageURL</a></li><li data-type='method'><a href="Guild.html#public">public</a></li><li data-type='method'><a href="Guild.html#raw">raw</a></li><li data-type='method'><a href="Guild.html#secondaryOwners">secondaryOwners</a></li><li data-type='method'><a href="Guild.html#shortDescription">shortDescription</a></li><li data-type='method'><a href="Guild.html#tags">tags</a></li><li data-type='method'><a href="Guild.html#vanityCode">vanityCode</a></li><li data-type='method'><a href="Guild.html#vanityURL">vanityURL</a></li></ul></li><li><a href="Ratelimit.html">Ratelimit</a><ul class='methods'><li data-type='method'><a href="Ratelimit.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="Ratelimit.html#headers">headers</a></li><li data-type='method'><a href="Ratelimit.html#limit">limit</a></li><li data-type='method'><a href="Ratelimit.html#message">message</a></li><li data-type='method'><a href="Ratelimit.html#name">name</a></li><li data-type='method'><a href="Ratelimit.html#retryAfter">retryAfter</a></li></ul></li><li><a href="Stats.html">Stats</a><ul class='members'><li data-type='method'><a href="Stats.html#guilds">guilds</a></li><li data-type='method'><a href="Stats.html#guildUserTotal">guildUserTotal</a></li><li data-type='method'><a href="Stats.html#raw">raw</a></li><li data-type='method'><a href="Stats.html#tags">tags</a></li><li data-type='method'><a href="Stats.html#users">users</a></li></ul></li><li><a href="Upvote.html">Upvote</a><ul class='methods'><li data-type='method'><a href="Upvote.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="Upvote.html#guildID">guildID</a></li><li data-type='method'><a href="Upvote.html#raw">raw</a></li><li data-type='method'><a href="Upvote.html#timestamp">timestamp</a></li><li data-type='method'><a href="Upvote.html#user">user</a></li></ul></li><li><a href="User.html">User</a><ul class='methods'><li data-type='method'><a href="User.html#toString">toString</a></li></ul><ul class='members'><li data-type='method'><a href="User.html#avatar">avatar</a></li><li data-type='method'><a href="User.html#description">description</a></li><li data-type='method'><a href="User.html#discriminator">discriminator</a></li><li data-type='method'><a href="User.html#id">id</a></li><li data-type='method'><a href="User.html#pageURL">pageURL</a></li><li data-type='method'><a href="User.html#raw">raw</a></li><li data-type='method'><a href="User.html#tag">tag</a></li><li data-type='method'><a href="User.html#username">username</a></li></ul></li></ul><h3>Externals</h3><ul><li><a href="external-Headers.html">Headers</a></li></ul><h3><a href="global.html">Global</a></h3>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Client</h1>
+    
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        Client
+        </h2>
+        
+            <div class="class-description">The Client for interacting with serverlist.space</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="Client"><span class="type-signature"></span>new Client<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ClientOptions">ClientOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        
+            <div class="subsection-item">
+                
+<h4 class="name" id="endpoint"><span class="type-signature"></span>endpoint<span class="type-signature"> :string</span></h4>
+
+
+
+
+<div class="description">
+    The API URL of serverlist.space. Version is missing; Polyfilled on get.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul class="ul-type">
+        <li>
+            
+<span class="param-type">string</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line44">line 44</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+<h4 class="name" id="guilds"><span class="type-signature"></span>guilds<span class="type-signature"> :Store.&lt;string, <a href="Guild.html">Guild</a>></span></h4>
+
+
+
+
+<div class="description">
+    Every guild cached, mapped by their ID.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul class="ul-type">
+        <li>
+            
+<span class="param-type">Store.&lt;string, <a href="Guild.html">Guild</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line31">line 31</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+<h4 class="name" id="options"><span class="type-signature"></span>options<span class="type-signature"> :<a href="global.html#ClientOptions">ClientOptions</a></span></h4>
+
+
+
+
+<div class="description">
+    The options.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul class="ul-type">
+        <li>
+            
+<span class="param-type"><a href="global.html#ClientOptions">ClientOptions</a></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+<h4 class="name" id="users"><span class="type-signature"></span>users<span class="type-signature"> :Store.&lt;string, <a href="User.html">User</a>></span></h4>
+
+
+
+
+<div class="description">
+    Every user cached, mapped by their ID.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul class="ul-type">
+        <li>
+            
+<span class="param-type">Store.&lt;string, <a href="User.html">User</a>></span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line37">line 37</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            </div>
+        
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="edit"><span class="type-signature"></span>edit<span class="signature">(options, preset<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#ClientOptions">ClientOptions</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Edits ClientOptions.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#ClientOptions">ClientOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>preset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether or not to use the default ClientOptions. Otherwise uses [this.client.options](<a href="Client.html#options">Client#options</a>)</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line79">line 79</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+<div class="param-desc">
+    The new ClientOptions.
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#ClientOptions">ClientOptions</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>SpaceClient.edit({ guildID: 123 }); // TypeError: options.guildID must be a string
+SpaceClient.edit({ guildID: '123' }); // { ..., guildID: '123', ... };</code></pre>
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="fetchGuild"><span class="type-signature">(async) </span>fetchGuild<span class="signature">(id<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Guild.html">Guild</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Fetches a single guild from serverlist.space
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="global.html#FetchOptions">FetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.options.guildID
+                
+                </td>
+            
+
+            <td class="description last">A guild ID listed on serverlist.space to fetch.
+Can also be FetchOptions; Uses [this.options.guildID](ClientOptions#guildID) for the ID if so.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#FetchOptions">FetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line113">line 113</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="Guild.html">Guild</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="fetchGuilds"><span class="type-signature">(async) </span>fetchGuilds<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array.&lt;<a href="Guild.html">Guild</a>>|Store.&lt;string, <a href="Guild.html">Guild</a>>)>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Fetches a page of guilds from serverlist.space
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#MultiFetchOptions">MultiFetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line95">line 95</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array.&lt;<a href="Guild.html">Guild</a>>|Store.&lt;string, <a href="Guild.html">Guild</a>>)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="fetchGuildsOfUser"><span class="type-signature">(async) </span>fetchGuildsOfUser<span class="signature">(id, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array.&lt;<a href="Guild.html">Guild</a>>|Store.&lt;string, <a href="Guild.html">Guild</a>>)>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Fetches a page of guilds that a user lists on serverlist.space
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The ID of a user to get guilds from.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#MultiFetchOptions">MultiFetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line141">line 141</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array.&lt;<a href="Guild.html">Guild</a>>|Store.&lt;string, <a href="Guild.html">Guild</a>>)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>SpaceClient.fetchGuildsOfUser('235593018332282884')
+	 .then(guilds => {
+    console.log(`All Guilds that User 235593018332282884 Owns:\n\n${guilds.map(g => g.name).join('\n')}`);
+	 })
+	 .catch(console.error);</code></pre>
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="fetchStats"><span class="type-signature">(async) </span>fetchStats<span class="signature">(options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="Stats.html">Stats</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    serverlist.space Statistics
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#FetchOptions">FetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line158">line 158</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="Stats.html">Stats</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="fetchUpvotes"><span class="type-signature">(async) </span>fetchUpvotes<span class="signature">(id<span class="signature-attributes">opt</span>, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;(Array.&lt;<a href="Upvote.html">Upvote</a>>|Store.&lt;string, <a href="Upvote.html">Upvote</a>>)>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Fetches a guild's upvotes in the current month; Requires a Bot Token.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+|
+
+<span class="param-type"><a href="global.html#MultiFetchOptions">MultiFetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    this.options.guildID
+                
+                </td>
+            
+
+            <td class="description last">A guild ID to check upvotes of.
+Can also be MultiFetchOptions; Uses [this.options.guildID](ClientOptions#guildID) for the ID if so.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#MultiFetchOptions">MultiFetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line178">line 178</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;(Array.&lt;<a href="Upvote.html">Upvote</a>>|Store.&lt;string, <a href="Upvote.html">Upvote</a>>)></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>async () => {
+  const upvotes = await SpaceClient.fetchUpvotes('guildID', { botToken: 'someAPIToken', mapify: false });
+	 for (const { user } of upvotes) console.log(`${user.tag} has upvoted this month!`);
+}</code></pre>
+
+
+
+            </div>
+        
+            <div class="subsection-item">
+                
+
+    
+
+    <h4 class="name" id="fetchUser"><span class="type-signature">(async) </span>fetchUser<span class="signature">(id, options<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Promise.&lt;<a href="User.html">User</a>>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Fetches a user on serverlist.space
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">A user ID to get properties of</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>options</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#FetchOptions">FetchOptions</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    {}
+                
+                </td>
+            
+
+            <td class="description last">Options to pass.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="Client.js.html">Client.js</a>, <a href="Client.js.html#line203">line 203</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5 class="returns">Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;<a href="User.html">User</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+            </div>
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.5.5</a> on Fri Jan 04 2019 20:16:03 GMT-0800 (Pacific Standard Time) using the Toast theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "servers.space",
+  "version": "1.0.0",
+  "description": "Simple interaction with serverlist.space API",
+  "main": "src/",
+  "types": "typings/",
+  "scripts": {
+    "test": "node examples/",
+    "dev": "node private/",
+    "docs": "jsdoc src/ README.md -c ./jsdoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BLU-Shack/servers.space.git"
+  },
+  "keywords": [
+    "serverlist.space",
+    "botlist.space"
+  ],
+  "author": "iREDMe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BLU-Shack/servers.space/issues"
+  },
+  "homepage": "https://github.com/BLU-Shack/servers.space#readme",
+  "dependencies": {
+    "node-fetch": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.1.4",
+    "toast-jsdoc": "^1.0.2"
+  }
+}
