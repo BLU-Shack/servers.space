@@ -46,7 +46,11 @@ class Client {
 	}
 
 	async get(endpoint, version, ...headers) {
-		const i = await Fetch(this.endpoint + version + endpoint + headers.join(''));
+		const i = await Fetch(this.endpoint + version + endpoint + headers.join(''), {
+			headers: {
+				'User-Agent': 'servers.space (owo)'
+			}
+		});
 		if (i.status === 429) {
 			throw new Ratelimit(i.headers, endpoint);
 		} else {
@@ -57,7 +61,12 @@ class Client {
 	}
 
 	async authGet(endpoint, version, Authorization, ...headers) {
-		const i = await Fetch(this.endpoint + version + endpoint + headers.join(''), { headers: { Authorization } });
+		const i = await Fetch(this.endpoint + version + endpoint + headers.join(''), {
+			headers: {
+				Authorization,
+				'User-Agent': 'servers.space (owo)'
+			}
+		});
 		if (i.status === 429) {
 			throw new Ratelimit(i.headers, endpoint);
 		} else {
