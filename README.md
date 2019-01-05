@@ -1,6 +1,6 @@
 <div style='text-align: center; '>
     <p>
-        <img src='https://i.imgur.com/FfvEt4G.png' width=500 height=150>
+        <img src='https://i.imgur.com/FfvEt4G.png' width=500 height=230>
     </p>
     <p>
         <a href='https://www.npmjs.com/package/servers.space'><img src='https://nodei.co/npm/servers.space.png'></a>
