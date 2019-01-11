@@ -128,6 +128,7 @@ declare module 'servers.space' {
 
 	type MultiFetchOptions = FetchOptions & {
 		mapify?: boolean;
+		raw?: boolean;
 		page?: number;
 	}
 
