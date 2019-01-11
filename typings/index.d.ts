@@ -112,23 +112,27 @@ declare module 'servers.space' {
 	//#endregion
 
 	//#region Typedefs
-	export type ClientOptions = {
+	type ClientOptions = {
 		cache?: boolean;
 		guildToken?: string;
 		guildID?: string;
 		version?: number;
 	}
 
-	export type FetchOptions = {
-		cache: boolean;
+	type FetchOptions = {
+		cache?: boolean;
 		guildToken?: string;
-		raw: boolean;
-		version: boolean;
+		raw?: boolean;
+		version?: boolean;
 	}
 
-	export type MultiFetchOptions = FetchOptions & {
+	type MultiFetchOptions = FetchOptions & {
 		mapify?: boolean;
 		page?: number;
 	}
+
+	export const DefaultOptions: ClientOptions;
+	export const FetchOpts: FetchOptions;
+	export const MultiFetchOpts: MultiFetchOptions;
 	//#endregion
 }
