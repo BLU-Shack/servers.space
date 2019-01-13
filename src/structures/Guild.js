@@ -93,15 +93,6 @@ class Guild extends Base {
 	}
 
 	/**
-	 * An array of emoji IDs the guild shows publicly on serverlist.space
-	 * @readonly
-	 * @type {string[]}
-	 */
-	get emojis() {
-		return this.raw.emojis;
-	}
-
-	/**
 	 * The guild's main owner. This is not always the guild owner.
 	 * @readonly
 	 * @type {User}
@@ -153,7 +144,7 @@ class Guild extends Base {
 	 */
 	get vanityURL() {
 		if (!this.vanityCode) return null;
-		return `https://serverlist.space/server/${this.vanityCode}`;
+		else return `https://serverlist.space/server/${this.vanityCode}`;
 	}
 
 	/**

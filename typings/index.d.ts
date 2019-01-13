@@ -22,8 +22,8 @@ declare module 'servers.space' {
 		public readonly endpoint: string;
 
 		public edit(options: ClientOptions, preset?: boolean): ClientOptions;
-		public fetchGuilds(options?: MultiFetchOptions): Promise<Guild[] | Store<string, Guild>>;
 		public fetchGuild(id?: string | FetchOptions, options?: FetchOptions): Promise<Guild>;
+		public fetchGuilds(options?: MultiFetchOptions): Promise<Guild[] | Store<string, Guild>>;
 		public fetchGuildsOfUser(id: string, options?: MultiFetchOptions): Promise<Guild[] | Store<string, Guild>>;
 		public fetchStats(options?: FetchOptions): Promise<Stats>;
 		public fetchUpvotes(id?: string | MultiFetchOptions, options?: MultiFetchOptions): Promise<Upvote[] | Store<string, Upvote>>;
@@ -54,7 +54,6 @@ declare module 'servers.space' {
 		public public: boolean;
 		public shortDescription: string;
 		public tags: string[];
-		public readonly emojis: string;
 		public readonly owner: User;
 		public readonly owners: User[];
 		public readonly ownersMap: Store<string, User>;
