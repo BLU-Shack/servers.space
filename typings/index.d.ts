@@ -4,7 +4,7 @@
 
 declare module 'servers.space' {
 	import { Response, Headers } from 'node-fetch';
-	import Store from '@ired_me/red-store';
+	import Store = require('@ired_me/red-store');
 	export const version: string;
 
 	//#region Classes
