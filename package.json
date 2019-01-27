@@ -1,6 +1,6 @@
 {
   "name": "servers.space",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple interaction with serverlist.space API",
   "main": "src/",
   "types": "typings/",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/BLU-Shack/servers.space#readme",
   "dependencies": {
+    "@ired_me/red-store": "^1.2.0",
     "node-fetch": "^2.3.0"
   },
   "devDependencies": {
