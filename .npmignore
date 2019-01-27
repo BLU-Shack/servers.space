@@ -3,3 +3,4 @@ node_modules/
 docs/
 .eslintrc.json
 private/
+tsconfig.json
