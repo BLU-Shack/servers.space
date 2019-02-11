@@ -212,7 +212,7 @@ class Client {
 		const contents = await this.authGet(`/servers/${id}/upvotes`, version, guildToken, {
 			page: page,
 		});
-		if (cache) this.users = this.users.concat(new Store(contents.upvotes.map(c => [c.user.id, new User(c.user)])));
+		if (cache) for (const c of contents.upvotes) this.users.set(c.user.id, new User(c.user));
 		if (mapify) return new Store(contents.upvotes.map(c => [c.user.id, raw ? c : new Upvote(c, id)]));
 		else return raw ? contents : contents.upvotes.map(c => new Upvote(c, id));
 	}
