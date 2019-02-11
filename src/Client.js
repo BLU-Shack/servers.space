@@ -46,6 +46,12 @@ class Client {
 		 * @type {Store<string, User>}
 		 */
 		this.users = new Store();
+
+		/**
+		 * An array of the latest fetched Statistics, from oldest to newest.
+		 * @type {Stats[]}
+		 */
+		this.stats = [];
 	}
 
 	/**
@@ -95,6 +101,9 @@ class Client {
 		if (!isObject(options)) throw new TypeError('options must be an object.');
 		const opts = check.edit(Object.assign(preset ? ClientOpts : this.options, options));
 
+		if (opts.statsLimit < this.options.statsLimit) while (this.stats.length > opts.statsLimit) this.stats.shift();
+
+		FetchOpts.cache = MultiFetchOpts.cache = opts.cache;
 		FetchOpts.version = MultiFetchOpts.version = opts.version;
 		FetchOpts.guildToken = MultiFetchOpts.guildToken = opts.guildToken;
 
@@ -177,10 +186,12 @@ class Client {
 	 * @returns {Promise<Stats>}
 	 */
 	async fetchStats(options = {}) {
-		const { raw, version } = Object.assign(FetchOpts, options);
+		const { cache, raw, version } = Object.assign(FetchOpts, options);
 		if (!isObject(options)) throw new TypeError('options must be an object.');
 
 		const contents = await this.get('/statistics', version);
+		if (cache) this.stats.push(new Stats(contents));
+		while (this.stats.length > this.options.statsLimit) this.stats.shift();
 		return raw ? contents : new Stats(contents);
 	}
 
