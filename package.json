@@ -1,6 +1,6 @@
 {
   "name": "servers.space",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Simple interaction with serverlist.space API",
   "main": "src/",
   "types": "typings/",

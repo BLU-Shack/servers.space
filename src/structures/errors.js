@@ -12,61 +12,44 @@ class Ratelimit extends Error {
 		super();
 		Error.captureStackTrace(this, Ratelimit);
 
-		// It has to be in here, otherwise the error output emits an object >:(
+		// It has to be like this, otherwise the error output emits an object >:( (Enumerability)
 		Object.defineProperties(this, {
-			/**
-		 	 * The Ratelimit Name ('Ratelimit')
-			 * @name Ratelimit#name
-			 * @readonly
-			 * @type {string}
-			 */
 			name: {
 				value: 'Ratelimit',
 			},
-			/**
-			 * The Ratelimit Headers.
-			 * @name Ratelimit#headers
-			 * @readonly
-			 * @type {Headers}
-			 */
 			headers: {
 				value: headers,
 			},
-			/**
-			 * The Ratelimit Message.
-			 * @name Ratelimit#message
-			 * @readonly
-			 * @type {string}
-			 */
 			message: {
 				value: `Endpoint /v${endpoint} Ratelimited, ${this.limit} times per ${this.retryAfter} second${this.retryAfter === 1 ? '' : 's'}`,
 			}
 		});
 	}
 
-	/**
-	 * The number of times you can call an endpoint before you get ratelimited.
-	 * @type {number}
-	 */
 	get limit() {
 		return parseInt(this.headers.get('x-ratelimit-limit'));
 	}
 
-	/**
-	 * The number of seconds you can wait until the Ratelimit is relieved.
-	 * @type {number}
-	 */
 	get retryAfter() {
 		return parseInt(this.headers.get('retry-after'));
 	}
 
-	/**
-	 * The endpoint of the Ratelimit.
-	 * @type {string}
-	 */
 	toString() {
 		return this.messages.split(' ')[1];
 	}
 }
 
-module.exports = Ratelimit;
+class FetchError extends Error {
+	constructor(i, message) {
+		super(`${i.status} ${message}`);
+		Object.defineProperty(this, 'name', { value: 'FetchError' });
+		if (Error.captureStackTrace) Error.captureStackTrace(this, FetchError);
+	}
+
+	toString() {
+		return this.message;
+	}
+}
+
+exports.FetchError = FetchError;
+exports.Ratelimit = Ratelimit;

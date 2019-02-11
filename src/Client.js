@@ -1,12 +1,23 @@
 const Fetch = require('node-fetch').default,
 	util = require('util'); // eslint-disable-line no-unused-vars
 
-const { isObject, check } = require('./util/');
-const { Ratelimit, FetchError,
-	DefaultOptions, FetchOpts, MultiFetchOpts,
-	Stats, Guild, User, Upvote } = require('./structures/');
-const ok = /2\d+/;
+/**
+ * @external Store
+ * @see {@link https://github.com/iREDMe/red-store}
+ */
 const Store = require('@ired_me/red-store');
+
+const Guild = require('./structures/Guild.js');
+const User = require('./structures/User.js');
+const Upvote = require('./structures/Upvote.js');
+const Stats = require('./structures/Stats.js');
+const { Ratelimit, FetchError } = require('./structures/errors.js');
+const { ClientOpts, FetchOpts, MultiFetchOpts } = require('./structures/options.js');
+
+const isObject = obj => !Array.isArray(obj) && obj === Object(obj);
+const check = require('./util/check.js');
+
+const ok = /2\d\d/;
 
 /**
  * The Client for interacting with serverlist.space
@@ -20,7 +31,7 @@ class Client {
 		 * The options.
 		 * @type {ClientOptions}
 		 */
-		this.options = DefaultOptions;
+		this.options = ClientOpts;
 
 		this.edit(options, true);
 
@@ -45,35 +56,29 @@ class Client {
 		return 'https://api.serverlist.space/v';
 	}
 
-	async get(endpoint, version, ...headers) {
-		const i = await Fetch(this.endpoint + version + endpoint + headers.join(''), {
-			headers: {
-				'User-Agent': 'servers.space (owo)'
-			}
-		});
-		if (i.status === 429) {
-			throw new Ratelimit(i.headers, endpoint);
-		} else {
-			const contents = await i.json();
-			if (contents.code && !ok.test(contents.code)) throw new FetchError(i, contents.message);
-			else return contents;
-		}
+	async get(point, version, headers = {}) {
+		let endpoint = this.endpoint + version + point;
+		endpoint += Object.entries(headers).map((e, i) => (i ? '&' : '?') + e[0] + '=' + e[1]).join('');
+		console.log(endpoint);
+		const i = await Fetch(endpoint);
+		if (i.status === 429) throw new Ratelimit(i.headers, version + point);
+		const contents = await i.json();
+		if (contents.code && !ok.test(contents.code)) throw new FetchError(i, contents.message);
+		else return contents;
 	}
 
-	async authGet(endpoint, version, Authorization, ...headers) {
-		const i = await Fetch(this.endpoint + version + endpoint + headers.join(''), {
+	async authGet(point, version, Authorization, headers = {}) {
+		let endpoint = this.endpoint + version + point;
+		endpoint += Object.entries(headers).map((e, i) => (i ? '&' : '?') + e[0] + '=' + e[1]).join('');
+		const i = await Fetch(endpoint, {
 			headers: {
-				Authorization,
-				'User-Agent': 'servers.space (owo)'
+				Authorization: Authorization
 			}
 		});
-		if (i.status === 429) {
-			throw new Ratelimit(i.headers, endpoint);
-		} else {
-			const contents = await i.json();
-			if (contents.code && !ok.test(contents.code)) throw new FetchError(i, contents.message);
-			else return contents;
-		}
+		if (i.status === 429) throw new Ratelimit(i.headers, version + point);
+		const contents = await i.json();
+		if (contents.code && !ok.test(contents.code)) throw new FetchError(i, contents.message);
+		else return contents;
 	}
 
 	/**
@@ -88,7 +93,7 @@ class Client {
 	edit(options, preset = false) {
 		if (typeof options === 'undefined') throw new ReferenceError('No options to pass for editing?');
 		if (!isObject(options)) throw new TypeError('options must be an object.');
-		const opts = check(Object.assign(preset ? DefaultOptions : this.options, options));
+		const opts = check.edit(Object.assign(preset ? ClientOpts : this.options, options));
 
 		FetchOpts.version = MultiFetchOpts.version = opts.version;
 		FetchOpts.guildToken = MultiFetchOpts.guildToken = opts.guildToken;
@@ -102,11 +107,16 @@ class Client {
 	 * @returns {Promise<Guild[] | Store<string, Guild>>}
 	 */
 	async fetchGuilds(options = {}) {
-		const { cache, mapify, page, version, raw } = Object.assign(MultiFetchOpts, options);
+		const revised = check.fetch(Object.assign(MultiFetchOpts, options));
+		const { cache, mapify, page, version, raw, reverse, sortBy } = Object.assign(MultiFetchOpts, revised);
 		if (typeof page !== 'number') throw new TypeError('page must be a number.');
 		if (!isObject(options)) throw new TypeError('options must be an object.');
 
-		const contents = await this.get('/servers', version, `?page=${page}`);
+		const contents = await this.get('/servers', version, {
+			page: page,
+			reverseSort: reverse,
+			sortBy: sortBy,
+		});
 		if (cache) for (const guild of contents.servers) this.guilds.set(guild.id, new Guild(guild));
 		if (mapify) return new Store(contents.servers.map(guild => [guild.id, raw ? guild : new Guild(guild)]));
 		else return raw ? contents : contents.servers.map(guild => new Guild(guild));
@@ -153,7 +163,9 @@ class Client {
 		if (typeof id !== 'string') throw new TypeError('id must be a string.');
 		if (!isObject(options)) throw new TypeError('options must be an object.');
 
-		const contents = await this.get(`/users/${id}/servers`, version, `?page=${page}`);
+		const contents = await this.get(`/users/${id}/servers`, version, {
+			page: page,
+		});
 		if (cache) for (const g of contents.servers) this.guilds.set(g.id, new Guild(g));
 		if (mapify) return new Store(contents.servers.map(guild => [guild.id, raw ? guild : new Guild(guild)]));
 		else return raw ? contents : contents.servers.map(g => new Guild(g));
@@ -197,7 +209,9 @@ class Client {
 		if (typeof id !== 'string' && !isObject(id)) throw new TypeError('id must be a string.');
 		if (!isObject(options)) throw new TypeError('options must be an object.');
 
-		const contents = await this.authGet(`/servers/${id}/upvotes`, version, guildToken, `?page=${page}`);
+		const contents = await this.authGet(`/servers/${id}/upvotes`, version, guildToken, {
+			page: page,
+		});
 		if (cache) this.users = this.users.concat(new Store(contents.upvotes.map(c => [c.user.id, new User(c.user)])));
 		if (mapify) return new Store(contents.upvotes.map(c => [c.user.id, raw ? c : new Upvote(c, id)]));
 		else return raw ? contents : contents.upvotes.map(c => new Upvote(c, id));

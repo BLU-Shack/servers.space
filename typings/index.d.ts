@@ -8,10 +8,6 @@ declare module 'servers.space' {
 	export const version: string;
 
 	//#region Classes
-	export class Base {
-		constructor(obj: object);
-		public readonly raw: object;
-	}
 
 	export class Client {
 		constructor(options?: ClientOptions);
@@ -28,15 +24,6 @@ declare module 'servers.space' {
 		public fetchStats(options?: FetchOptions): Promise<Stats>;
 		public fetchUpvotes(id?: string | MultiFetchOptions, options?: MultiFetchOptions): Promise<Upvote[] | Store<string, Upvote>>;
 		public fetchUser(id: string, options?: FetchOptions): Promise<User>;
-	}
-
-	export class FetchError extends Error {
-		constructor(i: Response, message: string);
-
-		public message: string;
-		public readonly name: 'FetchError';
-
-		public toString(): string;
 	}
 
 	export class Guild extends Base {
@@ -60,18 +47,6 @@ declare module 'servers.space' {
 		public readonly secondaryOwners: User[];
 		public readonly pageURL: string;
 		public readonly vanityURL?: string;
-
-		public toString(): string;
-	}
-
-	export class Ratelimit extends Error {
-		constructor(headers: Headers, endpoint: string);
-
-		public readonly name: string;
-		public readonly message: string;
-		public readonly headers: Headers;
-		public readonly limit: number;
-		public readonly retryAfter: number;
 
 		public toString(): string;
 	}
@@ -130,9 +105,31 @@ declare module 'servers.space' {
 		raw?: boolean;
 		page?: number;
 	}
-
-	export const DefaultOptions: ClientOptions;
-	export const FetchOpts: FetchOptions;
-	export const MultiFetchOpts: MultiFetchOptions;
 	//#endregion
+}
+
+declare class Base {
+	constructor(obj: object);
+	public readonly raw: object;
+}
+
+declare class FetchError extends Error {
+	constructor(i: Response, message: string);
+
+	public message: string;
+	public readonly name: 'FetchError';
+
+	public toString(): string;
+}
+
+declare class Ratelimit extends Error {
+	constructor(headers: Headers, endpoint: string);
+
+	public readonly name: string;
+	public readonly message: string;
+	public readonly headers: Headers;
+	public readonly limit: number;
+	public readonly retryAfter: number;
+
+	public toString(): string;
 }
