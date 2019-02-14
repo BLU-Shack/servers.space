@@ -65,7 +65,6 @@ class Client {
 	async get(point, version, headers = {}) {
 		let endpoint = this.endpoint + version + point;
 		endpoint += Object.entries(headers).map((e, i) => (i ? '&' : '?') + e[0] + '=' + e[1]).join('');
-		console.log(endpoint);
 		const i = await Fetch(endpoint);
 		if (i.status === 429) throw new Ratelimit(i.headers, version + point);
 		const contents = await i.json();
