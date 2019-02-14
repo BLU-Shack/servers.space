@@ -1,4 +1,4 @@
-// Type definitions for servers.space 1.0.0
+// Type definitions for servers.space 1.1.0
 // Project: servers.space
 // Definitions by: iREDMe (https://github.com/iREDMe)
 
